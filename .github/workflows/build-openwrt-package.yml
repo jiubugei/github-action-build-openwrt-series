@@ -15,8 +15,8 @@ env:
   # 这里填入你的设备的配置文件
   CONFIG_FILE: device/LETV.config
   # 这里填入要编译包的信息
-  PACKAGE_REPO: https://github.com/kiddin9/openwrt-packages.git
-  PACKAGE_NAME: luci-app-vlmcsd
+  PACKAGE_REPO: https://github.com/cokebar/openwrt-vlmcsd.git
+  PACKAGE_NAME: openwrt-vlmcsd
   PACKAGE_BRANCH: master
   # 下方参数保持默认即可
   TZ: Asia/Shanghai

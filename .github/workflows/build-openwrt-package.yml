@@ -11,12 +11,12 @@ on:
         
 env:
   # 这里填入你的SDK的地址，在https://downloads.openwrt.org/releases/中找到你的OpenWRT版本的SDK
-  SDK_URL: https://downloads.openwrt.org/releases/22.03.2/targets/x86/64/openwrt-sdk-22.03.2-x86-64_gcc-11.2.0_musl.Linux-x86_64.tar.xz
+  SDK_URL: https://github.com/lede-project/source/archive/refs/tags/v18.06.9.tar.gz
   # 这里填入你的设备的配置文件
-  CONFIG_FILE: device/x86-64.config
+  CONFIG_FILE: device/LETV.config
   # 这里填入要编译包的信息
-  PACKAGE_REPO: https://github.com/yichya/luci-app-xray.git
-  PACKAGE_NAME: luci-app-xray
+  PACKAGE_REPO: https://github.com/kiddin9/openwrt-packages.git
+  PACKAGE_NAME: luci-app-vlmcsd
   PACKAGE_BRANCH: master
   # 下方参数保持默认即可
   TZ: Asia/Shanghai
@@ -45,9 +45,9 @@ jobs:
     - name: Download OpenWRT SDK
       working-directory: /workdir
       run: |
-        wget $SDK_URL -O sdk.tar.xz
+        wget $SDK_URL -O sdk.tar.gz
         mkdir src
-        tar -xf sdk.tar.xz -C src --strip-components 1
+        tar -xf sdk.tar.gz -C src --strip-components 1
         ln -sf /workdir/src $GITHUB_WORKSPACE/src
         
     - name: Clone Package Code
